@@ -1,0 +1,58 @@
+/*colors used in demo:
+  #242582
+  #553D67
+  #F64C72
+  #99738E
+  #2F2FA2
+*/
+.nopadding {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.row {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.left_panel {
+  background-color: #242582;
+  color:white;
+  text-align: center;
+}
+
+.right_panel {
+    background-color: #99738E;
+    color:white;
+    text-align: center;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  /*height: 75px;*/
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling-wrapper .item {
+  display: inline-block;
+}
+.item {
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 90vh;
+  width: 100vh;
+  background: black;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  margin : 20px;
+}
+
+.nav li{
+    margin-right: 10px;
+}
