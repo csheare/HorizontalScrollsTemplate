@@ -1,174 +1,187 @@
-/*colors used in demo:
-  #242582
-  #553D67
-  #F64C72
-  #99738E
-  #2F2FA2
-*/
-
-.nopadding {
-  padding: 0px !important;
-  margin: 0px !important;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@-webkit-keyframes
+fill {  0% {
+    width: 0%;
+    height: 1px;
 }
-.row {
-  min-height: 100vh;
-  min-width: 100vw;
+    50% {
+  width: 100%;
+  height: 1px;
+    }
+    100% {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+    }
+}
+@keyframes
+fill {  0% {
+    width: 0%;
+    height: 1px;
+}
+    50% {
+  width: 100%;
+  height: 1px;
+    }
+    100% {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+    }
+}
+@-webkit-keyframes
+fillColour {  0% {
+    color: #fff;
+}
+    50% {
+  color: #fff;
+    }
+    100% {
+  color: #333;
+    }
+}
+@keyframes
+fillColour {  0% {
+    color: #fff;
+}
+    50% {
+  color: #fff;
+    }
+    100% {
+  color: #333;
+    }
 }
 
-.left_panel {
-  background-color: #242582;
-  color:white;
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
-.right_panel {
-    background-color: #99738E;
-    color:white;
-    text-align: center;
+body {
+    overflow: hidden;
+    font-size: 100%;
 }
-
-.page1{
-  background: #F64C72;
-}
-
-.page2{
-  background: #553D67;
-}
-
-.page3{
-  background: #2F2FA2;
-}
-
-/*Code For Nav Bar Start*/
 
 nav {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  width: 50vw;
-  height: 10vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 100;
+    height: 5em;
+    left: 0vw;
+    width: 100vw;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
+.side-content {
+    text-align: center;
+    background: rgba(0, 255, 0, 1.0);
+    position: fixed;
+    display: none;
+    z-index: 100;
+    height: 100vh;
+    left: 0vw;
+    width: 20vw;
+    font-weight: 300;
+    font-size: 1rem;
+}
 nav ul {
-  list-style-type: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+    list-style-type: none;
+    height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
 nav a, nav a:visited, nav a:active {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 nav a {
-  -webkit-transition: color 2s, background 1s;
-  transition: color 2s, background 1s;
-  padding: 10px;
-  position: relative;
-  z-index: 0;
+    -webkit-transition: color 2s, background 1s;
+    transition: color 2s, background 1s;
+    padding: 10px;
+    position: relative;
+    z-index: 0;
 }
 
 nav a.active { background: rgba(0, 0, 0, 0.9); }
 
 nav a::before {
-  content: "";
-  position: absolute;
-  height: 0%;
-  width: 0%;
-  bottom: 0;
-  left: 0;
-  opacity: 1;
-  background: #555;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    background: #555;
+    z-index: -1;
 }
 
 nav a:hover {
-  -webkit-animation: fillColour 0.7s forwards ease-in-out;
-  animation: fillColour 0.7s forwards ease-in-out;
+    -webkit-animation: fillColour 0.7s forwards ease-in-out;
+    animation: fillColour 0.7s forwards ease-in-out;
 }
 
 nav a:hover::before {
-  -webkit-animation: fill 0.7s forwards ease-in-out;
-  animation: fill 0.7s forwards ease-in-out;
-  opacity: 1;
+    -webkit-animation: fill 0.7s forwards ease-in-out;
+    animation: fill 0.7s forwards ease-in-out;
+    opacity: 1;
 }
 
-/*Code For Nav Bar End*/
-
-.pages {
-  width: 50vw;
-  height: 100vh;
-  -webkit-transition: -webkit-transform 0.8s ease;
-  transition: transform 0.8s ease;
+.slides {
+    width: 500vw;
+    height: 100vh;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition-timing-function: linear;
+    transition: transform 0.5s ease;
 }
 
-.pages .page {
-  height: 100vh;
-  width: 50vw;
-  background: pink;
-  text-align: center;
+.slides .slide {
+    height: 100vh;
+    width: 100vw;
+    background: pink;
+    float: left;
+    text-align: center;
+    background-size: cover;
 }
 
-
-.pages .page .content {
-  width: 50vw;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  margin: 35vh 0 0 15vw;
-  border-radius: 5px;
+.slides .slide .content {
+    text-align: left;
+    width: 70vw;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 35vh 0 0 25vw;
+    border-radius: 5px;
 }
 
-.pages .page .content p {
-  padding: 10px 0;
-  border-bottom: 1px solid black;
+.slides .slide .content p {
+    padding: 10px 0;
+    border-bottom: 1px solid black;
 }
 
-@-webkit-keyframes
-fill {  0% {
- width: 0%;
- height: 1px;
-}
- 50% {
- width: 50%;
- height: 1px;
-}
-}
+.slides .slide:nth-child(1) { background-image: url(https://unsplash.it/1800/1200?image=612); }
 
-@keyframes
-fill {  0% {
- width: 0%;
- height: 1px;
-}
- 50% {
- width: 50%;
- height: 1px;
-}
+.slides .slide:nth-child(2) { background-image: url(https://unsplash.it/1800/1200?image=912); }
 
-}
+.slides .slide:nth-child(3) { background-image: url(https://unsplash.it/1800/1200?image=212); }
 
-@-webkit-keyframes
-fillColour {  0% {
- color: #fff;
-}
- 50% {
- color: #fff;
-}
-}
+.slides .slide:nth-child(4) { background-image: url(https://unsplash.it/1800/1200?image=312); }
 
-@keyframes
-fillColour {  0% {
- color: #fff;
-}
- 50% {
- color: #fff;
-}
-}<br type="_moz">
+.slides .slide:nth-child(5) { background-image: url(https://unsplash.it/1800/1200?image=412); }
+
+.slides .slide img { width: 100%; }
